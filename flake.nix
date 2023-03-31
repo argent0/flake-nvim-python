@@ -50,11 +50,11 @@
             };
           };
       in [
-        pkgs.python310Packages.mypy
-        pkgs.python310Packages.pylint
-        pkgs.python310Packages.python-lsp-server
-        pkgs.python310Packages.pylsp-mypy
-        pkgs.python310Full
+        pkgs.python311Packages.mypy
+        pkgs.python311Packages.pylint
+        pkgs.python311Packages.python-lsp-server
+        pkgs.python311Packages.pylsp-mypy
+        pkgs.python311
         local-neovim
         pkgs.nodejs
       ];

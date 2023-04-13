@@ -40,21 +40,21 @@
         extraNixDerivations ? [ ],
       }: nvim-vimrc-code.lib.neovim {
         extraVimrcLines = extraVimrcLines;
-        extraVimPlugins = with pkgs.vimPlugins; ( [
+        extraVimPlugins = with pkgs.vimPlugins; [
           vim-surround
           nvim-lspconfig
           nvim-cmp
           cmp-nvim-lsp
           (nvim-treesitter.withPlugins (p: with p; [ python ]))
-        ] ++ extraVimPlugins);
+        ] ++ extraVimPlugins;
         extraNixDerivations = [
           python
-        ] ++ extraNixDerivations ++ (with pythonPackages; ( [
+        ] ++ extraNixDerivations ++ (with pythonPackages; [
           mypy
           pylint
           python-lsp-server
           pylsp-mypy
-        ] ++ extraPythonPackages));
+        ]) ++ extraPythonPackages;
       };
     };
         
